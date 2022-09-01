@@ -1,74 +1,159 @@
-// ### CHALLENGE 1: REVERSE A STRING
-// // Return a string in reverse
-// //  ex:
-// reverseString('hello') === 'olleh';
+// 1.
+function reverseString(str){
 
-// #### CHALLENGE 2: VALIDATE A PALINDROME
-// // Return true if palindrome and false if not
-// // ex:
-// isPalindrome('racecar') === true;
-// isPalindrome('hello') == false;
+    return str.split("").reverse("").join("");
 
-// ### CHALLENGE 3: REVERSE AN INTEGER
-// // Return an integer in reverse
-// // ex:
-// reverseInt(521) === 125;
+}
+console.log(reverseString("hello"));
+console.log('----------------------1');
 
-// ### CHALLENGE 4: CAPITALIZE LETTERS
-// // Return a string with the first letter of every word capitalized
-// //  ex:
-// capitalizeLetters('i love javascript') === 'I Love Javascript';
+// 2.
+function isPalindrome(palindrome) {
+  let reversPalindrome = palindrome.toLowerCase().split("").reverse().join("");
+  return reversPalindrome === palindrome;
+}
+console.log(isPalindrome(`racecar`));
+console.log(isPalindrome("hello"));
+console.log('------------------------------2');
 
-// ### CHALLENGE 5: MAX CHARACTER
-// // Return the character that is most common in a string
-// // ex:
-// maxCharacter('javascript') == 'a';
+3.
+function reversDigits(num)
+{
+    let rev_num = 0;
+    while (num > 0)
+    {
+        rev_num = rev_num * 10 + num % 10;
+        num = Math.floor(num / 10);
+    }
+    return rev_num;
+}
+console.log(reversDigits(521));
+console.log('-------------------------3.1');
+function reverseAnInteger(integer) {
+  return +integer.toString().split("").reverse().join("");
+}
+console.log(reverseAnInteger(521));
+console.log('--------------------------3.2');
 
-// ### CHALLENGE 6: FIZZBUZZ
-// Write a program that prints all the numbers from 1 to 100. For multiples of 3, instead of the number, print "Fizz", for multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz".
+// 4.
+function capitalizeLetters(str) {
+   let splitStr = str.toLowerCase().split(' ');
+   for (let i = 0; i < splitStr.length; i++) {
+      
+       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+   }
+   return splitStr.join(' '); 
+}
 
-// ### CHALLENGE 7: LONGEST WORD
-// Return the longest word of a string
-// SOLUTION 1 - Return a single longest word
+
+console.log(capitalizeLetters("i love javascript"));
+console.log('-----------------------4');
+
+// 5.
+function maxChar(str) {
+  const charMap = {};
+  let max = 0;
+  let maxChar = '';
+  
+  for (let char of str) {
+    if (charMap[char]) {
+      charMap[char]++;
+    } else {
+      charMap[char] = 1;
+    }
+  }
+
+
+  for (let char in charMap) {
+    if (charMap[char] > max) {
+      max = charMap[char];
+      maxChar = char;
+    }
+  }
+
+  return maxChar;
+}
+console.log(maxChar('javascript'));
+console.log('------------------------------5');
+
+// 6.
+for (let n = 1; n <= 100; n++) {
+  let output = "";
+  if (n % 3 == 0) output += "Fizz";
+  if (n % 5 == 0) output += "Buzz";
+  console.log(output || n);
+}
+console.log('------------------------6');
+
+// 7.
+function findLongestWord(str) {
+  
+    const splStrArray = str.split(" ");
+  
+    const orderedArray = splStrArray.sort((a, b) => b.length - a.length)
+  
+    const longestWord2 = orderedArray[0]
+  
+    return longestWord2
+}
+
+
+console.log("7.1");
+
+console.log(findLongestWord("Hi there, my name is Brad"));
+
+console.log("--------------------------------------------------------------------");
 // SOLUTION 2 - Return an array and include multiple words if they have the same length
-// SOLUTION 3 - Only return an array if multiple words, otherwise return a string
-// ex:
-// longestWord('Hi there, my name is Brad') === 'there,';
-// longestWord('My name is Brad') === ['name', 'brad'];
-// longestWord('Brad') === 'brad';
+console.log("7.2");
 
-// ### CHALLENGE 8: ARRAY CHUNKING
-// // Split an array into chunked arrays of a specific length
-// // ex:
-// chunkArray([1, 2, 3, 4, 5, 6, 7], 3) === [[1, 2, 3], [4, 5, 6], [7]];
-// chunkArray([1, 2, 3, 4, 5, 6, 7], 2) === [[1, 2], [3, 4], [5, 6], [7]];
+function findLongestWords(str){
 
-// ### CHALLENGE 9: FLATTEN ARRAY
-// Take an array of arrays and flatten to a single array
-// ex:
-// [[1, 2], [3, 4], [5, 6], [7]] = [1, 2, 3, 4, 5, 6, 7]
+    const splStrArray = str.split(" ");
 
-// ### CHALLENGE 10: ANAGRAM
-// Return true if anagram and false if not
-// ex. isAnagram('elbow', 'below') === true
-// ex. isAnagram('Dormitory', ''dirty room##'') --> false
+    const longestWord = findLongestWord(str)
 
-// ### CHALLENGE 11: ADD ALL NUMBERS
-// Return a sum of all parameters entered regardless of the amount of numbers
-// ex:
-// addAll(2, 5, 6, 7) === 20;
+    const orderedArray = splStrArray.filter(a => a.length === longestWord.length);
 
-// ### CHALLENGE 12: SUM ALL PRIMES
-// Pass in a number to loop up to and add all of the prime numbers. A prime number is a whole number greater than 1 whose only factors are 1 and itself
-// ex.
-// sumAllPrimes(10) === 17;
+    return orderedArray
 
-// ### CHALENGE 13: SEEK AND DESTROY
-// Remove from the array whatever is in the following arguments. Return the leftover numbers in an array
-// ex:
-// seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6) == [3, 4, 'hello'];
+}
 
-// ### CHALLENGE 14: EVEN & ODD SUMS
-// Take in an array and return an array of the sums of even and odd numbers
-// ex:
-// evenOddSums([50, 60, 60, 45, 71]) == [170, 116];
+console.log(findLongestWords("My name is Brad"));
+
+console.log
+("--------------------------------------------------------------------");
+
+console.log('--------------------------7.2');
+
+function words(str){
+
+    const splStrArray = str.split(" ");
+
+    if(splStrArray.length > 1)
+
+    return splStrArray;
+
+    else return str;
+
+}
+
+console.log(words("brad"));
+
+
+console.log(words("My name is brad"));
+
+// 8.
+function chunkArray(arr, len) {
+
+    const chunkArray = [];
+    let i = 0;
+    while (i < arr.length){
+        chunkArray.push(arr.slice(i, i + len));
+        i += len;
+    }
+    return chunkArray;
+}
+
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 3));
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 2));
+console.log('-------------------------8');
