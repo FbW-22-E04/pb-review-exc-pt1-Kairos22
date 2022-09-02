@@ -98,13 +98,12 @@ function findLongestWord(str) {
 }
 
 
-console.log("7.1");
 
 console.log(findLongestWord("Hi there, my name is Brad"));
+console.log("----------------7.1");
 
-console.log("--------------------------------------------------------------------");
-// SOLUTION 2 - Return an array and include multiple words if they have the same length
-console.log("7.2");
+
+
 
 function findLongestWords(str){
 
@@ -120,8 +119,7 @@ function findLongestWords(str){
 
 console.log(findLongestWords("My name is Brad"));
 
-console.log
-("--------------------------------------------------------------------");
+
 
 console.log('--------------------------7.2');
 
@@ -141,6 +139,7 @@ console.log(words("brad"));
 
 
 console.log(words("My name is brad"));
+console.log('--------------------------7.3');
 
 // 8.
 function chunkArray(arr, len) {
@@ -181,4 +180,6 @@ function checkAnagrams(str1, str2){
 
 }
 checkAnagrams("elbow", "below");
+
 checkAnagrams("Dormitory", "dirtyroom");
+console.log('-----------------------------10');
