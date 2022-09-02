@@ -183,3 +183,8 @@ checkAnagrams("elbow", "below");
 
 checkAnagrams("Dormitory", "dirtyroom");
 console.log('-----------------------------10');
+
+// 11.
+const sum = (...args) => args.reduce((a, b) => a + b);
+
+console.log(sum(2, 5, 6, 7));
