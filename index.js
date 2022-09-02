@@ -157,3 +157,28 @@ function chunkArray(arr, len) {
 console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 3));
 console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 2));
 console.log('-------------------------8');
+
+// 9.
+let oldArray = [[1, 2], [3, 4], [5, 6], [7]];
+
+let newArray = Array.prototype.concat.apply([], oldArray);
+
+console.log(newArray);
+console.log('---------------------------9');
+
+// 10.
+function checkAnagrams(str1, str2){
+
+  var newstr1 = str1.toLowerCase().split('').sort().join();
+  var newstr2 = str2.toLowerCase().split('').sort().join();
+
+  if(newstr1 == newstr2){
+    console.log("String is Anagrams");
+  }
+  else{
+    console.log("String is Not Anagrams");
+  }
+
+}
+checkAnagrams("elbow", "below");
+checkAnagrams("Dormitory", "dirtyroom");
