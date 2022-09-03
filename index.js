@@ -188,3 +188,16 @@ console.log('-----------------------------10');
 const sum = (...args) => args.reduce((a, b) => a + b);
 
 console.log(sum(2, 5, 6, 7));
+console.log('----------------------11');
+
+// 12.
+function sumAllPrimes(num) {
+  let primes = [];
+  for (let i = 2; i <= num; i++) {
+    if (primes.every((prime) => i % prime !== 0))
+      primes.push(i);
+  }
+  return primes.reduce((sum, prime) => sum + prime, 0);
+}
+console.log(sumAllPrimes(10));
+console.log('-----------------------12');
