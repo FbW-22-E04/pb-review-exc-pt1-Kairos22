@@ -1,4 +1,4 @@
-// 1.
+// 1.REVERSE A STRING
 function reverseString(str){
 
     return str.split("").reverse("").join("");
@@ -7,7 +7,8 @@ function reverseString(str){
 console.log(reverseString("hello"));
 console.log('----------------------1');
 
-// 2.
+// 2. VALIDATE A PALINDROME
+
 function isPalindrome(palindrome) {
   let reversPalindrome = palindrome.toLowerCase().split("").reverse().join("");
   return reversPalindrome === palindrome;
@@ -16,7 +17,8 @@ console.log(isPalindrome(`racecar`));
 console.log(isPalindrome("hello"));
 console.log('------------------------------2');
 
-3.
+// 3.REVERSE AN INTEGER
+
 function reversDigits(num)
 {
     let rev_num = 0;
@@ -35,7 +37,8 @@ function reverseAnInteger(integer) {
 console.log(reverseAnInteger(521));
 console.log('--------------------------3.2');
 
-// 4.
+// 4.CAPITALIZE LETTERS
+
 function capitalizeLetters(str) {
    let splitStr = str.toLowerCase().split(' ');
    for (let i = 0; i < splitStr.length; i++) {
@@ -49,7 +52,8 @@ function capitalizeLetters(str) {
 console.log(capitalizeLetters("i love javascript"));
 console.log('-----------------------4');
 
-// 5.
+// 5.MAX CHARACTER
+
 function maxChar(str) {
   const charMap = {};
   let max = 0;
@@ -76,7 +80,8 @@ function maxChar(str) {
 console.log(maxChar('javascript'));
 console.log('------------------------------5');
 
-// 6.
+// 6. FIZZBUZZ
+
 for (let n = 1; n <= 100; n++) {
   let output = "";
   if (n % 3 == 0) output += "Fizz";
@@ -85,7 +90,8 @@ for (let n = 1; n <= 100; n++) {
 }
 console.log('------------------------6');
 
-// 7.
+// 7.LONGEST WORD
+
 function findLongestWord(str) {
   
     const splStrArray = str.split(" ");
@@ -141,7 +147,8 @@ console.log(words("brad"));
 console.log(words("My name is brad"));
 console.log('--------------------------7.3');
 
-// 8.
+// 8.ARRAY CHUNKING
+
 function chunkArray(arr, len) {
 
     const chunkArray = [];
@@ -157,7 +164,8 @@ console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 3));
 console.log(chunkArray([1, 2, 3, 4, 5, 6, 7], 2));
 console.log('-------------------------8');
 
-// 9.
+// 9.FLATTEN ARRAY
+
 let oldArray = [[1, 2], [3, 4], [5, 6], [7]];
 
 let newArray = Array.prototype.concat.apply([], oldArray);
@@ -165,7 +173,8 @@ let newArray = Array.prototype.concat.apply([], oldArray);
 console.log(newArray);
 console.log('---------------------------9');
 
-// 10.
+// 10.ANAGRAM
+
 function checkAnagrams(str1, str2){
 
   var newstr1 = str1.toLowerCase().split('').sort().join();
@@ -184,13 +193,15 @@ checkAnagrams("elbow", "below");
 checkAnagrams("Dormitory", "dirtyroom");
 console.log('-----------------------------10');
 
-// 11.
+// 11.ADD ALL NUMBERS
+
 const sum = (...args) => args.reduce((a, b) => a + b);
 
 console.log(sum(2, 5, 6, 7));
 console.log('----------------------11');
 
-// 12.
+// 12.SUM ALL PRIMES
+
 function sumAllPrimes(num) {
   let primes = [];
   for (let i = 2; i <= num; i++) {
@@ -202,7 +213,8 @@ function sumAllPrimes(num) {
 console.log(sumAllPrimes(10));
 console.log('-----------------------12');
 
-// 13.
+// 13.SEEK AND DESTROY
+
 function seekAndDestroy(arr) {
   
   let sumValues = Array.prototype.slice.call(arguments); 
@@ -219,7 +231,8 @@ function seekAndDestroy(arr) {
 console.log(seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6));
 console.log('------------------------13');
 
-// 14.
+// 14.EVEN & ODD SUMS
+
 let num = [50, 60, 60, 45, 71];
 
 const evenOddSums = (num) => {
