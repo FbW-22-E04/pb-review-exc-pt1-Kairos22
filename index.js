@@ -201,3 +201,41 @@ function sumAllPrimes(num) {
 }
 console.log(sumAllPrimes(10));
 console.log('-----------------------12');
+
+// 13.
+function seekAndDestroy(arr) {
+  
+  let sumValues = Array.prototype.slice.call(arguments); 
+  
+  sumValues.shift(); 
+  
+  return arr.filter(function(x) {
+    
+    return sumValues.indexOf(x) == -1;
+  
+  });
+}
+
+console.log(seekAndDestroy([2, 3, 4, 6, 6, 'hello'], 2, 6));
+console.log('------------------------13');
+
+// 14.
+let num = [50, 60, 60, 45, 71];
+
+const evenOddSums = (num) => {
+  
+  let sumEven = 0;
+  let sumOdd = 0;
+
+  for (let i in num) {
+    if (num[i] % 2 === 0){ 
+    sumEven += num[i];
+    } else if(num[i] % 2 === 1) {
+      sumOdd += num[i];
+    }
+  }
+  console.log([sumEven, sumOdd]);
+}
+
+evenOddSums([50, 60, 60, 45, 71]);
+console.log('-------------------------14');
